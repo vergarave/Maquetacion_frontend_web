@@ -55,7 +55,7 @@ function SideNavigation() {
           <span className="material-symbols">wb_sunny</span>
         </div>
         <span
-          className={`brand__name${pathname === '/rutinas' ? ' brand__name--ink' : ''}`}
+          className={`brand__name${pathname.startsWith('/rutinas') ? ' brand__name--ink' : ''}`}
         >
           Amanecer
         </span>

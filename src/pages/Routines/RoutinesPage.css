@@ -24,13 +24,28 @@
 }
 
 .routine-card {
+  position: relative;
   width: 290px;
   height: 270px;
-  padding: 24px;
   overflow: hidden;
   border-radius: 48px;
   background: var(--surface);
   box-shadow: 0 0 15px rgba(128, 128, 128, 0.3);
+}
+
+.routine-card__edit-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.routine-card > .toggle-switch {
+  position: absolute;
+  top: 32px;
+  right: 24px;
 }
 
 .routine-card__header {
@@ -40,6 +55,10 @@
   padding-bottom: 12px;
   align-items: flex-start;
   justify-content: space-between;
+}
+
+.routine-card__header > div {
+  max-width: 170px;
 }
 
 .routine-card__header h2 {
@@ -59,38 +78,7 @@
   letter-spacing: 0.28px;
 }
 
-.routine-switch {
-  position: relative;
-  width: 52px;
-  height: 32px;
-  flex: 0 0 52px;
-  padding: 2px 4px;
-  border: 0;
-  border-radius: 100px;
-  background: #ead7d4;
-  cursor: pointer;
-}
-
-.routine-switch span {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: white;
-  transition: transform 160ms ease;
-}
-
-.routine-switch--checked {
-  background: var(--coral);
-}
-
-.routine-switch--checked span {
-  transform: translateX(20px);
-}
-
-.routine-switch:focus-visible,
+.routine-card__edit-link:focus-visible,
 .add-routine-card:focus-visible {
   outline: 3px solid rgba(26, 35, 126, 0.35);
   outline-offset: 3px;
@@ -152,6 +140,7 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 28px;
+  text-decoration: none;
 }
 
 .add-routine-card__icon {
