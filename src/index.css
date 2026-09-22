@@ -31,6 +31,15 @@
 }
 
 :root {
+  --ink: #221919;
+  --muted: #454652;
+  --indigo: #1a237e;
+  --coral: #ff8a65;
+  --surface: #ffffff;
+  --canvas: #fbe9e7;
+  --yellow: #fff176;
+  --card-shadow: 0 8px 32px -4px rgba(26, 35, 126, 0.06),
+    0 4px 12px -2px rgba(26, 35, 126, 0.04);
   font-family: 'Quicksand', sans-serif;
   font-synthesis: none;
   color: #454652;
@@ -42,6 +51,10 @@
 
 * {
   box-sizing: border-box;
+}
+
+button {
+  font: inherit;
 }
 
 html {

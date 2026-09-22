@@ -1,148 +1,9 @@
-@font-face {
-  font-family: 'Material Symbols Outlined';
-  src: url('./assets/dashboard/material-symbols.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-}
-
-:root {
-  --ink: #221919;
-  --muted: #454652;
-  --indigo: #1a237e;
-  --coral: #ff8a65;
-  --surface: #ffffff;
-  --canvas: #fbe9e7;
-  --yellow: #fff176;
-  --card-shadow: 0 8px 32px -4px rgba(26, 35, 126, 0.06),
-    0 4px 12px -2px rgba(26, 35, 126, 0.04);
-}
-
-button {
-  font: inherit;
-}
-
-.dashboard-shell {
-  min-height: 1024px;
-  background: var(--canvas);
-  color: var(--muted);
-}
-
-.side-navigation {
-  position: fixed;
-  z-index: 10;
-  inset: 0 auto 0 0;
-  display: flex;
-  width: 256px;
-  min-height: 700px;
-  padding: 40px 16px 40px 0;
-  flex-direction: column;
-  box-sizing: border-box;
-  background: var(--canvas);
-  border-right: 1px solid rgba(234, 215, 212, 0.3);
-  box-shadow: 0 4px 10px rgba(26, 35, 126, 0.08);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 0 24px 64px 40px;
-}
-
-.brand__mark {
-  display: grid;
-  width: 64px;
-  height: 64px;
-  margin-bottom: 12px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--indigo);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  color: var(--yellow);
-}
-
-.material-symbols {
-  font-family: 'Material Symbols Outlined';
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0;
-  white-space: nowrap;
-}
-
-.brand__name {
-  color: var(--indigo);
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 40px;
-}
-
-.nav-links {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.nav-link {
-  display: flex;
-  width: 100%;
-  min-height: 44px;
-  padding: 12px 16px;
-  align-items: center;
-  gap: 12px;
-  border: 0;
-  border-radius: 0 9999px 9999px 0;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
-  letter-spacing: 0.28px;
-  text-align: left;
-}
-
-.nav-link img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-
-.nav-link--active {
-  background: var(--coral);
-  color: #8a2100;
-}
-
-.nav-link--active img,
-.nav-link--logout img {
-  width: 18px;
-  height: 18px;
-}
-
-.nav-link:focus-visible,
-.range-toggle button:focus-visible {
-  outline: 3px solid rgba(26, 35, 126, 0.35);
-  outline-offset: 2px;
-}
-
-.nav-link:not(.nav-link--active):hover {
-  background: rgba(255, 255, 255, 0.38);
-}
-
-.nav-link--logout {
-  flex: 0;
-}
-
-.dashboard-main {
+.dashboard-page {
   position: relative;
-  min-height: 1024px;
-  margin-left: 256px;
   overflow: hidden;
 }
 
-.dashboard-main > h1 {
+.dashboard-page > h1 {
   position: absolute;
   top: 94px;
   left: 108px;
@@ -161,7 +22,6 @@ button {
   height: 432px;
   padding: 40px;
   overflow: hidden;
-  box-sizing: border-box;
   border-radius: 32px;
   background: var(--surface);
   box-shadow: 0 8px 32px -4px rgba(128, 128, 128, 0.06),
@@ -227,6 +87,11 @@ button {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
+.range-toggle button:focus-visible {
+  outline: 3px solid rgba(26, 35, 126, 0.35);
+  outline-offset: 2px;
+}
+
 .chart-area {
   display: grid;
   height: 256px;
@@ -280,7 +145,6 @@ button {
   position: relative;
   height: 280px;
   padding: 25px 18px 20px;
-  box-sizing: border-box;
   border-radius: 32px;
   background: var(--surface);
   box-shadow: var(--card-shadow);
@@ -354,7 +218,6 @@ button {
   padding: 24px;
   align-items: flex-start;
   gap: 16px;
-  box-sizing: border-box;
   border-radius: 24px;
   background: var(--surface);
   box-shadow: var(--card-shadow);
@@ -396,27 +259,18 @@ button {
 }
 
 @media (max-width: 1280px) {
-  .side-navigation {
-    width: 220px;
-  }
-
-  .brand {
-    padding-left: 24px;
-  }
-
-  .dashboard-main {
-    margin-left: 220px;
+  .dashboard-page {
     padding: 64px;
     overflow: visible;
   }
 
-  .dashboard-main > h1,
+  .dashboard-page > h1,
   .chart-card,
   .dashboard-summary {
     position: static;
   }
 
-  .dashboard-main > h1 {
+  .dashboard-page > h1 {
     margin-bottom: 56px;
   }
 
@@ -439,56 +293,11 @@ button {
 }
 
 @media (max-width: 860px) {
-  .dashboard-shell {
-    min-height: 100vh;
-  }
-
-  .side-navigation {
-    position: relative;
-    width: 100%;
-    min-height: auto;
-    padding: 20px;
-    border-right: 0;
-    box-shadow: 0 4px 10px rgba(26, 35, 126, 0.06);
-  }
-
-  .brand {
-    padding: 0 0 20px;
-  }
-
-  .brand__mark {
-    width: 52px;
-    height: 52px;
-    margin-bottom: 6px;
-  }
-
-  .brand__name {
-    font-size: 26px;
-    line-height: 32px;
-  }
-
-  .nav-links {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .nav-link,
-  .nav-link--logout {
-    justify-content: center;
-    border-radius: 9999px;
-  }
-
-  .nav-link--logout {
-    display: none;
-  }
-
-  .dashboard-main {
-    min-height: auto;
-    margin-left: 0;
+  .dashboard-page {
     padding: 40px 20px 60px;
   }
 
-  .dashboard-main > h1 {
+  .dashboard-page > h1 {
     margin-bottom: 32px;
     font-size: 34px;
   }
@@ -514,14 +323,6 @@ button {
 }
 
 @media (max-width: 560px) {
-  .nav-links {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .nav-link span {
-    font-size: 12px;
-  }
-
   .chart-card__header {
     gap: 20px;
     flex-direction: column;
