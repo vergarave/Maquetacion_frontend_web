@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import dashboardActiveIcon from '../../assets/dashboard/dashboard.svg'
 import routinesInactiveIcon from '../../assets/dashboard/routines.svg'
 import homeIcon from '../../assets/dashboard/home.svg'
@@ -47,6 +47,7 @@ function NavigationLink({ item }) {
 
 function SideNavigation() {
   const { pathname } = useLocation()
+  const navigate = useNavigate()
 
   return (
     <aside className="side-navigation" aria-label="Navegación principal">
@@ -80,7 +81,11 @@ function SideNavigation() {
         </NavLink>
       </nav>
 
-      <button className="nav-link nav-link--logout" type="button">
+      <button
+        className="nav-link nav-link--logout"
+        type="button"
+        onClick={() => navigate('/login')}
+      >
         <img src={logoutIcon} alt="" aria-hidden="true" />
         <span>Logout</span>
       </button>

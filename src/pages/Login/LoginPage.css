@@ -1,0 +1,34 @@
+.login-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  background: var(--coral);
+}
+
+.login-panel {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  place-items: center;
+  background: var(--coral);
+}
+
+.login-content { width: min(364px, calc(100vw - 64px)); }
+.login-brand { margin-bottom: 46px; text-align: center; }
+.login-brand__mark { display: grid; width: 126px; height: 126px; margin: 0 auto 42px; place-items: center; border-radius: 50%; background: var(--indigo); color: var(--yellow); font-size: 78px; }
+.login-brand h1 { margin: 0; color: var(--ink); font-size: 34px; font-weight: 700; line-height: 42px; }
+.login-brand p { margin: 0; color: #fff6f4; font-size: 22px; font-weight: 500; line-height: 30px; }
+.login-form { display: grid; gap: 16px; }
+.login-form label { display: block; }
+.login-form input { width: 100%; height: 68px; padding: 0 24px; border: 0; border-radius: 999px; outline: 0; background: #fff5f3; color: var(--muted); font: inherit; font-size: 17px; }
+.login-form input::placeholder { color: var(--muted); opacity: 1; }
+.login-form input:focus { box-shadow: 0 0 0 3px rgba(26, 35, 126, .36); }
+.login-form__recovery { justify-self: end; margin: -6px 6px 20px 0; padding: 0; border: 0; background: transparent; color: #8a2100; cursor: pointer; font-size: 15px; font-weight: 700; line-height: 20px; }
+.login-form__submit { height: 68px; border: 0; border-radius: 999px; background: var(--indigo); color: white; cursor: pointer; font: inherit; font-size: 22px; font-weight: 500; }
+.login-form__submit:hover { background: #121a69; }
+.login-form__submit:focus-visible, .login-form button:focus-visible { outline: 3px solid rgba(26, 35, 126, .48); outline-offset: 3px; }
+.login-form__registration { margin: -2px 0 0; color: #8a2100; font-size: 15px; line-height: 20px; text-align: center; }
+.login-form__registration button { padding: 0; border: 0; background: transparent; color: #8a2100; cursor: pointer; font: inherit; font-weight: 700; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (max-width: 640px) { .login-page { padding: 0; } .login-panel { min-height: 100vh; } .login-brand__mark { width: 96px; height: 96px; margin-bottom: 28px; font-size: 58px; } .login-brand { margin-bottom: 36px; } }
