@@ -69,10 +69,15 @@ function SideNavigation() {
           <img src={homeIcon} alt="" aria-hidden="true" />
           <span>Hogar</span>
         </button>
-        <button className="nav-link" type="button">
+        <NavLink
+          to="/perfil"
+          className={({ isActive }) =>
+            `nav-link${isActive ? ' nav-link--active' : ''}`
+          }
+        >
           <img src={profileIcon} alt="" aria-hidden="true" />
           <span>Perfil</span>
-        </button>
+        </NavLink>
       </nav>
 
       <button className="nav-link nav-link--logout" type="button">

@@ -3,6 +3,7 @@ import AppLayout from './components/layout/AppLayout.jsx'
 import RoutinesProvider from './context/RoutinesProvider.jsx'
 import DashboardPage from './pages/Dashboard/DashboardPage.jsx'
 import EditRoutinePage from './pages/EditRoutine/EditRoutinePage.jsx'
+import ProfilePage from './pages/Profile/ProfilePage.jsx'
 import RoutinesPage from './pages/Routines/RoutinesPage.jsx'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Route index element={<Navigate to="/dashboard" replace />} />
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/rutinas" element={<RoutinesPage />} />
+            <Route path="/perfil" element={<ProfilePage />} />
             <Route
               path="/rutinas/:routineId/editar"
               element={<EditRoutinePage />}
