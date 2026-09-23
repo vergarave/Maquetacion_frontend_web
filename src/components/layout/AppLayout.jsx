@@ -66,10 +66,15 @@ function SideNavigation() {
         {navigation.map((item) => (
           <NavigationLink item={item} key={item.path} />
         ))}
-        <button className="nav-link" type="button">
+        <NavLink
+          to="/hogar"
+          className={({ isActive }) =>
+            `nav-link${isActive ? ' nav-link--active' : ''}`
+          }
+        >
           <img src={homeIcon} alt="" aria-hidden="true" />
           <span>Hogar</span>
-        </button>
+        </NavLink>
         <NavLink
           to="/perfil"
           className={({ isActive }) =>
